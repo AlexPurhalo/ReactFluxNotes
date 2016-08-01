@@ -2,6 +2,9 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 
+// Server configurations
+import { serverPort } from '../etc/config.json';
+
 // Application's parts import
 import * as db from './utils/DataBaseUtils';
 
@@ -27,5 +30,5 @@ app.delete('/notes/:id', (req, res) => {
 
 // Server Using
 const server = app.listen(8080, () => {
-	console.log(`Server is running`)
+	console.log(`Server is running ${serverPort}`)
 });
